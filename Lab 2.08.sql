@@ -63,7 +63,7 @@ ON (a1.film_id = a2.film_id) AND (a1.actor_id <> a2.actor_id)
 order by a1.actor_id asc;
 
 -- Full name pair Version
-select concat(a.first_name, ' ', a.last_name) as 'Actor 1', concat(b.first_name, ' ', b.last_name) as 'Actor 2'
+select distinctrow concat(a.first_name, ' ', a.last_name) as 'Actor 1', concat(b.first_name, ' ', b.last_name) as 'Actor 2'
 from(
 SELECT a1.actor_id as actor1 , a2.actor_id as actor2 
 FROM film_actor a1
