@@ -1,3 +1,5 @@
+use sakila;
+
 -- 1. Write a query to display for each store its store ID, city, and country.
 select s.store_id, c.city, ct.country
 from store s
@@ -54,7 +56,7 @@ group by i.film_id;
 
 -- 7. Get all pairs of actors that worked together.
 -- Numeric pair Version
-SELECT a1.actor_id as 'Actor 1' , a2.actor_id as 'Actor 2' 
+SELECT distinctrow a1.actor_id as 'Actor 1' , a2.actor_id as 'Actor 2'
 FROM film_actor a1
 JOIN film_actor a2
 ON (a1.film_id = a2.film_id) AND (a1.actor_id <> a2.actor_id)
